@@ -1,0 +1,2 @@
+set GOOGLE_APPLICATION_CREDENTIALS=automobile-sportive-641544278e6b.json
+npm start

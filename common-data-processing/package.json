@@ -1,0 +1,23 @@
+{
+  "name": "weight-cars-data-processing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "model-detection.js",
+  "command": "npm --experimental-modules",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "start": "model-detection.js",
+    "test": "mocha --require esm"
+  },
+  "author": "",
+  "license": "ISC",
+  "jshintConfig": {
+    "esversion": 9
+  }
+}

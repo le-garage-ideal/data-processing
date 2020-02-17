@@ -1,0 +1,20 @@
+{
+  "name": "weight-cars-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules server.js"
+  },
+  "jshintConfig": {
+    "esversion": 9
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.8.11",
+    "pg": "^7.12.1"
+  }
+}
