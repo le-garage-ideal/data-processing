@@ -1,0 +1,22 @@
+{
+  "name": "api-data-processing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "brands-logos-from-api.js",
+  "command": "npm --experimental-modules",
+  "type": "module",
+  "scripts": {
+    "brands-logos": "node --experimental-modules brands-logos.js",
+    "brands-names": "node --experimental-modules brands-names.js",
+    "brands-models-refresh": "node --experimental-modules brands-models-refresh.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fuse.js": "^3.4.6",
+    "mongoose": "^5.9.1",
+    "sharp": "^0.24.1"
+  }
+}

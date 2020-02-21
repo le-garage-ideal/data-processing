@@ -16,13 +16,22 @@ async function main() {
 
     await theClient.query(`SET search_path TO 'weightcars'`);
 
+    //
+    // Find models from variants
+    //
 
     // const modelResult = await automaticModelDetection(theClient);
-
     // await addModelDetectionToCloud(db, modelResult);
-    const brands = await exportObjectsFromBusinessTables(theClient);
+    
+    //
+    // Export from postgres to mongodb
+    //    
+    
+    // const brands = await exportObjectsFromBusinessTables(theClient);
+    // await initMongoDb(brands);
 
-    await initMongoDb(brands);
+
+
 
     console.log('done');
 
