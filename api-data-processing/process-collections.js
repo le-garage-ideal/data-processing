@@ -40,21 +40,21 @@ async function update(collection, transform, async) {
 export async function selectBrands(filter, transform) {
 
     const brands = await Brand.find(filter).exec();
-    select(brands, transform);
+    return select(brands, transform);
 
 }
 
 export async function selectModels(filter, transform) {
 
     const models = await Model.find(filter).exec();
-    select(models, transform);
+    return select(models, transform);
 
 }
 
 export async function selectCars(filter, transform) {
 
     const cars = await Car.find(filter).exec();
-    select(cars, transform);
+    return select(cars, transform);
 
 }
 
@@ -62,5 +62,6 @@ async function select(collection, transform) {
     for (let document of collection) {
         transform(document);
     }
+    return collection;
 }
 

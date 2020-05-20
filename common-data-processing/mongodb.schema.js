@@ -12,13 +12,14 @@ export default function defineMongoDbSchema(mongoose) {
         startYear: String,
         endYear: String,
         model: { name: String, brand: { name: String } },
-
+        favcarsVariants: [{ name: String, urls: [String] }]
         // model: { type: Schema.Types.ObjectId, ref: 'Model' },
     });
 
     const modelSchema = new Schema({
         name: String,
         brand: { name: String },
+        favcarsName: String,
         // brand: { type: Schema.Types.ObjectId, ref: 'Brand' },
         // cars: [{ type: Schema.Types.ObjectId, ref: 'Car' }]
     });
@@ -27,6 +28,7 @@ export default function defineMongoDbSchema(mongoose) {
         name: String,
         imageUrl: String,
         image: String,
+        favcarsName: String,
         // models: [{ type: Schema.Types.ObjectId, ref: 'Model' }],
     });
 

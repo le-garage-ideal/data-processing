@@ -8,14 +8,18 @@
   "scripts": {
     "brands-logos": "node --experimental-modules brands-logos.js",
     "brands-names": "node --experimental-modules brands-names.js",
-    "brands-models-refresh": "node --experimental-modules brands-models-refresh.js"
+    "brands-models-refresh": "node --experimental-modules brands-models-refresh.js",
+    "favcars-brand-names-refresh": "node --experimental-modules favcars/favcars-brand-names-refresh.js",
+    "favcars-model-names-refresh": "node --experimental-modules favcars/favcars-model-names-refresh.js",
+    "favcars-variant-names-images-refresh": "node --experimental-modules favcars/favcars-variant-names-images-refresh.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "fuse.js": "^3.4.6",
+    "cheerio": "^1.0.0-rc.3",
+    "fuse.js": "^6.0.0",
     "mongoose": "^5.9.1",
     "sharp": "^0.24.1"
   }

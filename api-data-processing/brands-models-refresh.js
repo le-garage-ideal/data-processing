@@ -6,18 +6,12 @@ async function brandsModelsRefresh() {
 
     console.log('brandsModelsRefresh');
     let i = 0;
+    let j = 0;
 
     try {
-        const existingModelNames = [];
-        await selectModels({}, model => {
-            const brandModel = `${car.model.brand.name}#${car.model.name}`;
-            existingModelNames.push(brandModel);
-        });
+        const existingModelNames = await selectModels({}, model => `${model.brand.name}#${model.name}`);
 
-        const existingBrandNames = [];
-        await selectBrands({}, brand => {
-            existingBrandNames.push(brand.name);
-        });
+        const existingBrandNames = selectBrands({}, brand => brand.name);
 
         const newModelNames = [];
         const newBrandNames = [];
@@ -36,6 +30,7 @@ async function brandsModelsRefresh() {
             const newBrand = { name: brandName };
             console.log('New brand', newBrand);
             await Brand.create(newBrand);
+            i++;
         }
 
         for (let brandModel of newModelNames) {
@@ -43,6 +38,7 @@ async function brandsModelsRefresh() {
             const newModel = { name: modelName, brand: {name: brandName }};
             console.log('New model', newModel);
             await Model.create(newModel);
+            j++;
         }
 
     } catch (error) {
@@ -50,7 +46,7 @@ async function brandsModelsRefresh() {
         process.exit(1);
     }
 
-    console.log(i + ' brands updated')
+    console.log(i + ' brands created, ' + j + ' models created')
     process.exit(0);
 
 }
