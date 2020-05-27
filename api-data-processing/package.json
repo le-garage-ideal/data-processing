@@ -9,6 +9,7 @@
     "brands-logos": "node --experimental-modules brands-logos.js",
     "brands-names": "node --experimental-modules brands-names.js",
     "brands-models-refresh": "node --experimental-modules brands-models-refresh.js",
+    "cars-variants": "node --experimental-modules cars-variants.js",
     "favcars-brand-names-refresh": "node --experimental-modules favcars/favcars-brand-names-refresh.js",
     "favcars-model-names-refresh": "node --experimental-modules favcars/favcars-model-names-refresh.js",
     "favcars-variant-names-images-refresh": "node --experimental-modules favcars/favcars-variant-names-images-refresh.js"

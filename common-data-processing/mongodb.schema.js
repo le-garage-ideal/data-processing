@@ -12,7 +12,9 @@ export default function defineMongoDbSchema(mongoose) {
         startYear: String,
         endYear: String,
         model: { name: String, brand: { name: String } },
-        favcarsVariants: [{ name: String, urls: [String] }]
+        favcarsVariants: [{ name: String, urls: [String] }],
+        selectedFavcarsVariant: String,
+        selectedFavcarsUrl: String,
         // model: { type: Schema.Types.ObjectId, ref: 'Model' },
     });
 
