@@ -16,11 +16,11 @@ async function refreshVariantsFavcars() {
 
         const models = await selectModels({}, doc => doc);
 
-        const cars = await selectCars({}, doc => doc);
+        const cars = await selectCars({'model.name': 'ka'}, doc => doc);
 
         let count = 0;
         let matchCount = 0;
-        let found = false;
+        let found = true;
         for (let car of cars) {
             if (!found || car.selectedFavcarsUrl /*|| (!!car.favcarsVariants && car.favcarsVariants.length === 0)*/) {
                 if (car.variant === 'Huayra Roadster') {

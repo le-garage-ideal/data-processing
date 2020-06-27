@@ -10,9 +10,11 @@
     "brands-names": "node --experimental-modules brands-names.js",
     "brands-models-refresh": "node --experimental-modules brands-models-refresh.js",
     "cars-variants": "node --experimental-modules cars-variants.js",
+    "cars-model-sync": "node --experimental-modules cars-model-sync.js",
     "favcars-brand-names-refresh": "node --experimental-modules favcars/favcars-brand-names-refresh.js",
     "favcars-model-names-refresh": "node --experimental-modules favcars/favcars-model-names-refresh.js",
-    "favcars-variant-names-images-refresh": "node --experimental-modules favcars/favcars-variant-names-images-refresh.js"
+    "favcars-variant-names-images-refresh": "node --experimental-modules favcars/favcars-variant-names-images-refresh.js",
+    "cars-variants-images": "node --experimental-modules cars-variants-images.js"
   },
   "keywords": [],
   "author": "",

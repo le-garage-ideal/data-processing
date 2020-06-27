@@ -5,8 +5,7 @@ import Axios from 'axios';
 import mongoose from 'mongoose';
 
 import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
-import { updateBrands } from './process-collections.js';
-import logos from './brands-logos.json';
+import { updateBrands, selectBrands } from './process-collections.js';
 
 const db = connectToMongoDb(mongoose);
 
@@ -40,15 +39,21 @@ async function fetchBrandLogosFromFilesystem() {
     let i = 0;
 
     try {
-        const fuse = new Fuse(logos, { keys: [ 'name' ], threshold: 0.1, sort: true});
+        const files = fs.readdirSync('../../brand-logos/images');
+
+        const fuse = new Fuse(files, { threshold: 0.1, sort: true});
     
-        await updateBrands({ image: null }, async brand => {  
+        const brands = await selectBrands({ image: null }, brand => brand);
+        for (let brand of brands) {  
             const match = fuse.search(brand.name);
             if (match && match.length > 0) {
-                brand.image = await resizeToBase64('../../brand-logos/images/' + match[0].fileName);
+                brand.image = await resizeToBase64('../../brand-logos/images/' + match[0].item);
+                await brand.save();
+                i++;
+            } else {
+                console.log('No file for brand ' + brand.name);
             }
-            i++;
-        }, true);
+        }
 
     } catch (error) {
         console.log(error);
