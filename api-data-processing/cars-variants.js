@@ -1,6 +1,7 @@
 import { updateBrands, updateModels, updateCars, selectBrands, selectModels, selectCars, Car } from './process-collections.js';
 import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
 import mongoose from 'mongoose';
+import Axios from 'axios';
 const db = connectToMongoDb(mongoose);
 async function carVariantsReplaceRegex() {
 
@@ -8,28 +9,24 @@ async function carVariantsReplaceRegex() {
     let i = 0;
 
     try {
-
-        const regex = /\stt/i;
-        const cars = await selectCars({ 'model.brand.name': 'PORSCHE', 'variant': regex }, car => car);
-        const promises = [];
+        const cars = await selectCars({selectedFavcarsUrl: /favcars\.com.*_l.jpg/i}, car => car);
         for (const car of cars) {
-            let matches;
-
-            while ((matches = regex.exec(car.variant)) !== null) {
-                console.log(car.variant);
-                const newVariant = `${car.variant.substring(0, matches.index)} turbo${car.variant.substring(matches.index + 3)}`;
-                console.log(newVariant);
-                await updateCars({ _id: car._id }, doc => { doc.variant = newVariant; return doc; });
-                i++;
-                break;
+            const newUrl = `${car.selectedFavcarsUrl.substring(0, car.selectedFavcarsUrl.length-6)}.jpg`;
+            try {
+                //await Axios.get(newUrl);
+                await updateCars({ _id: car._id }, doc => { doc.selectedFavcarsUrl = newUrl; return doc; });
+            } catch (error) {
+                console.log('Url not found', newUrl);
             }
+            i++;
         }
+
     } catch (error) {
         console.log(error);
         process.exit(1);
     }
 
-    console.log(i + ' brands updated')
+    console.log(i + ' documents updated')
     process.exit(0);
 
 }

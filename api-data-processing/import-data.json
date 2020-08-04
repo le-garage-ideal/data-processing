@@ -1,0 +1,374 @@
+[{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "racing"
+    },
+    "variant": "Racing",
+    "power": 285,
+    "officialWeight": 1623,
+    "weight": null,
+    "options": "V6 2.0 TT",
+    "startYear": "1991",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/picture/m/maserati/racing/maserati_racing_6.jpeg",
+    "selectedFavcarsVariant": "racing"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "biturbo"
+    },
+    "variant": "Biturbo Zagato Spyder",
+    "power": 225,
+    "officialWeight": 1260,
+    "weight": null,
+    "options": "V6 2.8 TT",
+    "startYear": "1984",
+    "endYear": "1989",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/picture/m/maserati/zagato/spyder/maserati_spyder_3.jpg",
+    "selectedFavcarsVariant": "zagato/spyder"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "biturbo"
+    },
+    "variant": "Biturbo Coupé",
+    "power": 185,
+    "officialWeight": 1161,
+    "weight": null,
+    "options": "V6 2.0 TT",
+    "startYear": "1982",
+    "endYear": "1988",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/picture/m/maserati/biturbo/maserati_biturbo_9.jpg",
+    "selectedFavcarsVariant": "biturbo"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "biturbo"
+    },
+    "variant": "Biturbo Si",
+    "power": 220,
+    "officialWeight": 1194,
+    "weight": null,
+    "options": "V6 2.0 TT",
+    "startYear": "1986",
+    "endYear": "1991",
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/format/picture/picture-gallery-full/m/maserati/biturbo/maserati_biturbo_s_1.jpg",
+    "selectedFavcarsVariant": "biturbo"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "biturbo"
+    },
+    "variant": "Biturbo Karif",
+    "power": 250,
+    "officialWeight": 1281,
+    "weight": null,
+    "options": "V6 2.8 TT",
+    "startYear": "1988",
+    "endYear": "1992",
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/picture/m/maserati_karif/maserati_karif_3.jpg",
+    "selectedFavcarsVariant": "maserati_karif"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "levante"
+    },
+    "variant": "Levante S",
+    "power": 350,
+    "officialWeight": 2109,
+    "weight": null,
+    "options": "V6 3.0 TT",
+    "startYear": "2016",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/picture/m/maserati/levante/maserati_levante_369.jpeg",
+    "selectedFavcarsVariant": "levante"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "quattroporte"
+    },
+    "variant": "Quattroporte AM337 Evoluzione",
+    "power": 335,
+    "officialWeight": 1675,
+    "weight": null,
+    "options": "V6 3.2 TT",
+    "startYear": "1998",
+    "endYear": "2001",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/picture/m/maserati/quattroporte_evoluzione/maserati_quattroporte_evoluzione_6.jpeg",
+    "selectedFavcarsVariant": "quattroporte/iv/evoluzione"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "quattroporte"
+    },
+    "variant": "Quattroporte M139",
+    "power": 440,
+    "officialWeight": 1990,
+    "weight": null,
+    "options": "V8 4.2 TT",
+    "startYear": "2003",
+    "endYear": "2012",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery-full/m/maserati/quattroporte/maserati_quattroporte_au-spec_12.jpg",
+    "selectedFavcarsVariant": "quattroporte/v"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "quattroporte"
+    },
+    "variant": "Quattroporte M156 GTS",
+    "power": 530,
+    "officialWeight": 1940,
+    "weight": null,
+    "options": "V8 3.8 TT",
+    "startYear": "2016",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s30.wheelsage.org/format/picture/picture-gallery/m/maserati/quattroporte_gts/maserati_quattroporte_gts_25.jpg",
+    "selectedFavcarsVariant": "quattroporte/vi"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "ghibli"
+    },
+    "variant": "Ghibli AM336",
+    "power": 306,
+    "officialWeight": 1365,
+    "weight": null,
+    "options": "V6 2.8 TT",
+    "startYear": "1992",
+    "endYear": "1998",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/picture/m/maserati/ghibli/maserati_ghibli_1.jpeg",
+    "selectedFavcarsVariant": "ghibli/ii"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "ghibli"
+    },
+    "variant": "Ghibli M157",
+    "power": 410,
+    "officialWeight": 1870,
+    "weight": null,
+    "options": "V6 3.0 TT",
+    "startYear": "2013",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s30.wheelsage.org/format/picture/picture-gallery/m/maserati/ghibli/maserati_ghibli_727_0533036b09700711.jpg",
+    "selectedFavcarsVariant": "ghibli/iii"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "granturismo"
+    },
+    "variant": "GranTurismo M145 MC",
+    "power": 450,
+    "officialWeight": 1670,
+    "weight": null,
+    "options": "V8 4.7 TT",
+    "startYear": "2011",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/format/picture/picture-gallery-full/m/maserati/granturismo/maserati_granturismo_s_mc_sport_line_au-spec_18.jpg",
+    "selectedFavcarsVariant": "granturismo"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "granturismo"
+    },
+    "variant": "GranTurismo M145",
+    "power": 405,
+    "officialWeight": 1880,
+    "weight": null,
+    "options": "V8 4.2 TT",
+    "startYear": "2007",
+    "endYear": "2017",
+    "selectedFavcarsUrl": "https://s30.wheelsage.org/format/picture/picture-gallery/m/maserati/pininfarina/granturismo/maserati_granturismo_684_025b00e50d940a2e.jpg",
+    "selectedFavcarsVariant": "granturismo"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "granturismo"
+    },
+    "variant": "GranTurismo M145",
+    "power": 460,
+    "officialWeight": 1880,
+    "weight": null,
+    "options": "V8 4.7 TT",
+    "startYear": "2017",
+    "endYear": null,
+    "selectedFavcarsUrl": "https://s30.wheelsage.org/format/picture/picture-gallery/m/maserati/granturismo_sport/maserati_granturismo_sport_91.jpg",
+    "selectedFavcarsVariant": "granturismo"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "grancabrio"
+    },
+    "variant": "GranCabrio M145",
+    "power": 440,
+    "officialWeight": 1887,
+    "weight": null,
+    "options": "V8 4.7 TT",
+    "startYear": "2010",
+    "endYear": "2017",
+    "selectedFavcarsUrl": "https://s30.wheelsage.org/format/picture/picture-gallery-full/maserati/grancabrio/autowp.ru_maserati_grancabrio_3.jpg",
+    "selectedFavcarsVariant": "grancabrio"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "grancabrio"
+    },
+    "variant": "GranCabrio M145 MC",
+    "power": 450,
+    "officialWeight": 1887,
+    "weight": null,
+    "options": "V8 4.7 TT",
+    "startYear": "2017",
+    "endYear": "2019",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery/m/maserati/grancabrio_mc/maserati_grancabrio_mc_34.jpg",
+    "selectedFavcarsVariant": "grancabrio"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "gransport"
+    },
+    "variant": "GranSport Spyder",
+    "power": 400,
+    "officialWeight": 1580,
+    "weight": null,
+    "options": "V8 4.2 TT",
+    "startYear": "2006",
+    "endYear": "2007",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery/m/maserati/grancabrio_mc/maserati_grancabrio_mc_34.jpg",
+    "selectedFavcarsVariant": "gransport"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "gransport"
+    },
+    "variant": "GranSport",
+    "power": 400,
+    "officialWeight": 1580,
+    "weight": null,
+    "options": "V8 4.2 TT",
+    "startYear": "2004",
+    "endYear": "2007",
+    "selectedFavcarsUrl": "https://s31.wheelsage.org/format/picture/picture-gallery/m/maserati/gransport/maserati_gransport_296_00b200000d570a20.jpg",
+    "selectedFavcarsVariant": "gransport"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "coupé"
+    },
+    "variant": "Coupé M138",
+    "power": 390,
+    "officialWeight": 1670,
+    "weight": null,
+    "options": "V8 4.2 TT",
+    "startYear": "2002",
+    "endYear": "2007",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery-full/i/italdesign/maserati/coupe/maserati_coupe_7.jpg",
+    "selectedFavcarsVariant": "coupe"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "3200 GT"
+    },
+    "variant": "3200 GT",
+    "power": 370,
+    "officialWeight": 1590,
+    "weight": null,
+    "options": "V8 3.2 TT",
+    "startYear": "1998",
+    "endYear": "2002",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery/i/italdesign/maserati/3200_gt/maserati_3200_gt_00da00000c190920.jpg",
+    "selectedFavcarsVariant": "3200_gt"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "430"
+    },
+    "variant": "430 AM332",
+    "power": 250,
+    "officialWeight": 1407,
+    "weight": null,
+    "options": "V6 2.8 TT",
+    "startYear": "1987",
+    "endYear": "1991",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery/m/maserati/430/maserati_430_00ba012e07e505f9.jpg",
+    "selectedFavcarsVariant": "430"
+},
+{
+    "model": {
+        "brand": {
+            "name": "MASERATI"
+        },
+        "name": "430"
+    },
+    "variant": "430 4V",
+    "power": 279,
+    "officialWeight": 1414,
+    "weight": null,
+    "options": "V6 2.8 TT",
+    "startYear": "1991",
+    "endYear": "1994",
+    "selectedFavcarsUrl": "https://s35.wheelsage.org/format/picture/picture-gallery-full/maserati/430/autowp.ru_maserati_430_4v_1.jpg",
+    "selectedFavcarsVariant": "430"
+}]

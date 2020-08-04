@@ -28,4 +28,31 @@ async function carsWithoutModel() {
     process.exit(0);
 }
 
-carsWithoutModel();
+async function modelsWithoutCars() {
+
+    console.log('modelsWithoutCars');
+    let i = 0;
+
+    try {
+        console.log('------------------')
+        const transformModel = model => `${model.brand.name}#${model.name}`;
+        const models = await selectModels({}, model => model);
+        const cars = await selectCars({}, car => car);
+        const carModelNames = cars.map(car => transformModel(car.model));
+        for (const model of models) {
+            const modelName = transformModel(model);
+            if (carModelNames.findIndex(m => m === modelName) < 0) {
+                console.log('car not found for model', modelName);
+            }
+        }
+        console.log('------------------')
+
+    } catch (error) {
+        console.error(error);
+    }
+
+    process.exit(0);
+}
+
+
+modelsWithoutCars();

@@ -39,7 +39,7 @@ async function carVariantsExtractImages() {
                 process.stdout.cursorTo(0);
                 process.stdout.write(progress + '%');
             } catch (error) {
-                console.log(error);
+                console.log('Error URL', car.selectedFavcarsUrl)
                 errorNb++;
             }
         }
@@ -63,7 +63,7 @@ async function downloadImage(car, url) {
             response.data.pipe(writer);
             writer.on('finish', resolve)
             writer.on('error', reject)
-        });
+        }).catch(error => reject(error));
     });
 }
 
@@ -83,5 +83,5 @@ async function resizeImages() {
     process.exit(0);
 }
 
-resizeImages();
+carVariantsExtractImages();
 

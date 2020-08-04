@@ -14,7 +14,8 @@
     "favcars-brand-names-refresh": "node --experimental-modules favcars/favcars-brand-names-refresh.js",
     "favcars-model-names-refresh": "node --experimental-modules favcars/favcars-model-names-refresh.js",
     "favcars-variant-names-images-refresh": "node --experimental-modules favcars/favcars-variant-names-images-refresh.js",
-    "cars-variants-images": "node --experimental-modules cars-variants-images.js"
+    "cars-variants-images": "node --experimental-modules cars-variants-images.js",
+    "import-export": "node --experimental-modules import-export.js"
   },
   "keywords": [],
   "author": "",
