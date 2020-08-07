@@ -23,7 +23,9 @@ async function carVariantsExtractImages() {
     let errorNb = 0;
 
     fs.writeFileSync(indexPath, '');
-    // await updateCars({}, c => c.imageFile = null);
+
+    // Comment to extract only new files or URL in error
+    //await updateCars({}, c => c.imageFile = null);
 
     const cars = await selectCars({}, car => car);
     for (const car of cars) {
@@ -31,15 +33,15 @@ async function carVariantsExtractImages() {
         if (!car.imageFile) {
             try {
                 await downloadImage(car, car.selectedFavcarsUrl);
-                await updateCars({_id: car._id}, c => c.imageFile = `${car._id}.jpg`);
                 fs.appendFileSync(indexPath, `${car.model.brand.name}\t${car.model.name}\t${car.variant}\t${car.startYear}\t${car._id}.jpg\n`);
+                await updateCars({_id: car._id}, c => c.imageFile = `${car._id}.jpg`);
                 i++;
                 const progress = Math.round(i*100/cars.length);
                 process.stdout.clearLine();
                 process.stdout.cursorTo(0);
                 process.stdout.write(progress + '%');
             } catch (error) {
-                console.log('Error URL', car.selectedFavcarsUrl)
+                console.log('Error URL', car._id, car.selectedFavcarsUrl)
                 errorNb++;
             }
         }

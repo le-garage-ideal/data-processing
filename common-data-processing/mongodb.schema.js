@@ -15,6 +15,7 @@ export default function defineMongoDbSchema(mongoose) {
         favcarsVariants: [{ name: String, urls: [String] }],
         selectedFavcarsVariant: String,
         selectedFavcarsUrl: String,
+        imageFile: String,
         // model: { type: Schema.Types.ObjectId, ref: 'Model' },
     });
 
