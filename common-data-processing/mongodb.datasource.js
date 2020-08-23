@@ -1,7 +1,9 @@
+import { mongodbPasswords } from './passwords.js';
+
 export default async function connectToMongoDb(mongoose) {
 
     //Set up default mongoose connection
-    var mongoDB = 'mongodb://uepch5uqblw5mad6k1x1:BN5Ufr4twpbJqZjdshDr@bmbu7ynqra11rqi-mongodb.services.clever-cloud.com:27017/bmbu7ynqra11rqi';
+    var mongoDB = `mongodb://uepch5uqblw5mad6k1x1:${mongodbPasswords}@bmbu7ynqra11rqi-mongodb.services.clever-cloud.com:27017/bmbu7ynqra11rqi`;
     mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
     //Get the default connection
