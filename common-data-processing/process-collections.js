@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-import defineMongoDbSchema from '../common-data-processing/mongodb.schema.js';
+import defineMongoDbSchema from './mongodb.schema.js';
 
-export const {Car, Model, Brand} = defineMongoDbSchema(mongoose);
+export const { Car, Model, Brand } = defineMongoDbSchema(mongoose);
 
 export async function updateBrands(filter, transform, async = false) {
 

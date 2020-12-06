@@ -5,7 +5,7 @@ import Axios from 'axios';
 import mongoose from 'mongoose';
 
 import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
-import { updateBrands, selectBrands } from './process-collections.js';
+import { updateBrands, selectBrands } from '../common-data-processing/process-collections.js';
 
 const db = connectToMongoDb(mongoose);
 

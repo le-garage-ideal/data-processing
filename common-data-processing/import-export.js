@@ -72,5 +72,5 @@ async function importCollection() {
 
 }
 
-importCollection();
+exportCollections();
 

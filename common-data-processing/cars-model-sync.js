@@ -1,5 +1,5 @@
 import { updateBrands, updateModels, updateCars, selectBrands, selectModels, selectCars, Car } from './process-collections.js';
-import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
+import connectToMongoDb from './mongodb.datasource.js';
 import mongoose from 'mongoose';
 const db = connectToMongoDb(mongoose);
 async function carsWithoutModel() {

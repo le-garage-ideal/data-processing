@@ -1,4 +1,4 @@
-import { Brand, Model, updateModels, selectBrands, selectModels } from '../process-collections.js';
+import { Brand, Model, updateModels, selectBrands, selectModels } from '../../common-data-processing/process-collections.js';
 import connectToMongoDb from '../../common-data-processing/mongodb.datasource.js';
 import mongoose from 'mongoose';
 import Axios from 'axios';
