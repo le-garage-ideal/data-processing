@@ -108,3 +108,4 @@ export async function fromImportToBusinessTable() {
     const reqCar   = `insert into car (variant, power, real_weight, official_weight, "options", start_date, model_id)
                         select w.variant, w.power, w.real_weight, w.given_weight, w.misc, to_date(concat(w.start_year, '0101'),'YYYYMMDD'), m.id from weightcars_import w inner join brand b on b.name = w.brand inner join model m on m.name = w.model1 and m.brand_id = b.id`;
 }
+
