@@ -22,12 +22,13 @@ async function carVariantsExtractImages() {
     let i = 0;
     let errorNb = 0;
 
-    fs.writeFileSync(indexPath, '');
-
-    // Comment to extract only new files or URL in error
+    // Uncomment to extract all files
     //await updateCars({}, c => c.imageFile = null);
+    //fs.writeFileSync(indexPath, '');
 
-    const cars = await selectCars({}, car => car);
+    const cars = await selectCars({imageFile: { $eq: null }}, car => car);
+    console.log('nb images to extract', cars.length);
+     
     for (const car of cars) {
         
         if (!car.imageFile) {
