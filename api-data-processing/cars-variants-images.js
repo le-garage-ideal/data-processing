@@ -1,6 +1,5 @@
 import { updateBrands, updateModels, updateCars, selectBrands, selectModels, selectCars, Car } from '../common-data-processing/process-collections.js';
 import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
-import mongoose from 'mongoose';
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
@@ -14,7 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const imgDir = '/Users/benth/Documents/dev/perso/le-garage-ideal/le-garage-ideal-website/gatsby-site/static/images';
 const indexPath = path.resolve(imgDir, `index.txt`);
 const getImgPath = id => path.resolve(imgDir, `${id}.jpg`);
-const db = connectToMongoDb(mongoose);
+const db = connectToMongoDb();
 
 async function carVariantsExtractImages() {
 

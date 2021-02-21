@@ -1,6 +1,7 @@
+import mongoose from 'mongoose';
 import { mongodbPasswords } from './passwords.js';
 
-export default async function connectToMongoDb(mongoose) {
+export default async function connectToMongoDb() {
 
     //Set up default mongoose connection
     var mongoDB = `mongodb://uepch5uqblw5mad6k1x1:${mongodbPasswords}@bmbu7ynqra11rqi-mongodb.services.clever-cloud.com:27017/bmbu7ynqra11rqi`;
