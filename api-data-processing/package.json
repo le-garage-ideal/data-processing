@@ -6,7 +6,8 @@
   "command": "npm --experimental-modules",
   "type": "module",
   "scripts": {
-    "brands-logos": "node --experimental-modules brands-logos.js",
+    "brands-images-to-files": "node strapi/brands-images-to-files.mjs",
+    "brands-migration": "node strapi/brands-migration.mjs",
     "brands-names": "node --experimental-modules brands-names.js",
     "brands-models-refresh": "node --experimental-modules brands-models-refresh.js",
     "cars-variants": "node --experimental-modules cars-variants.js",
@@ -22,6 +23,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
+    "form-data": "^4.0.0",
     "fuse.js": "^6.0.0",
     "mongoose": "^5.11.17",
     "sharp": "^0.30.5"
