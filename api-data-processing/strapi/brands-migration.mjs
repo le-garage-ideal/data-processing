@@ -1,11 +1,11 @@
 import brands from '../../../brands.json' assert { type: "json" };;
-import { api, callApiPromises, extractExtension } from './utils.mjs';
+import { api, promiseWithCatch, callApiPromises, extractExtension } from './utils.mjs';
 
 
-migrateBrands();
+migrateBrands().then(() => console.log('END'));
 
 async function migrateBrands() {
-  const brandsImagesResponses = await api.get('upload/files');
+  const brandsImagesResponses = await promiseWithCatch(api.get('upload/files'));
   const brandsImageData = brandsImagesResponses?.data;
 
   const brandsDataPromises = brands
@@ -16,7 +16,7 @@ async function migrateBrands() {
     .map(brand => api.post('brands', {
       data: {
         name: brand.name,
-        image: brand.image.id,
+        image: brand.image?.id,
       }
     }));
   return callApiPromises(brandsDataPromises);

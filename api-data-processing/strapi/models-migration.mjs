@@ -1,12 +1,12 @@
 import models from '../../../models.json' assert { type: "json" };;
-import { api, callApiPromises } from './utils.mjs';
+import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 
 migrateModels();
 
 async function migrateModels() {
-  const brandsResponse = await api.get('brands', {
+  const brandsResponse = await promiseWithCatch(api.get('brands', {
     params: { 'pagination[limit]': 100000 },
-  });
+  }));
   const brands = brandsResponse?.data?.data;
   const modelsWithBrandId = models
     .map(model => {

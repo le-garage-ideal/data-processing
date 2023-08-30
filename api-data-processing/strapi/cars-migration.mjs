@@ -1,12 +1,12 @@
 import cars from '../../../cars.json' assert { type: "json" };;
-import { api, callApiPromises } from './utils.mjs';
+import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 
 migrateCars();
 
 async function migrateCars() {
-  const modelsResponse = await api.get('models', {
+  const modelsResponse = await promiseWithCatch(api.get('models', {
     params: { 'pagination[limit]': 100000, populate: '*' },
-  });
+  }));
   const models = modelsResponse?.data?.data;
   const carsWithModelId = cars
     .map(car => {
@@ -23,7 +23,7 @@ async function migrateCars() {
     throw new Error(`No model for cars ${carsWithoutModel.map(m => m.name)}`);
   }
 
-  const carsImagesResponses = await api.get('upload/files');
+  const carsImagesResponses = await promiseWithCatch(api.get('upload/files'));
   const carsImageData = carsImagesResponses?.data;
 
   const carsDataPromises = carsWithModelId.map(car => {
