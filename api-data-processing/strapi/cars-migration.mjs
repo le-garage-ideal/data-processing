@@ -1,4 +1,4 @@
-import cars from '../../../cars.json' assert { type: "json" };;
+import cars from '../../../cars.json' assert { type: "json" };
 import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 
 migrateCars();
@@ -26,10 +26,19 @@ async function migrateCars() {
   const carsImagesResponses = await promiseWithCatch(api.get('upload/files'));
   const carsImageData = carsImagesResponses?.data;
 
-  const carsDataPromises = carsWithModelId.map(car => {
+  const carsDataPromises = [];
+  let carsWithoutImages = 0;
+  for (const car of carsWithModelId) {
     const imageFileName = `${car._id['$oid']}-resized.jpg`;
-    const imageFileData = carsImageData.find(carImageData => carImageData.name === imageFileName)
-    return api.post('cars', {
+    const imageFileData = carsImageData.find(carImageData => carImageData.name === imageFileName);
+    if (!imageFileData?.id) {
+      console.log(`No image for car ${car._id['$oid']}`, car, imageFileData);
+      if (carsWithoutImages > 20) {
+        throw new Error('Too much cars without images, something is wrong');
+      }
+      carsWithoutImages++;
+    }
+    carsDataPromises.push(api.post('cars', {
       data: {
         variant: car.variant,
         weight: car.weight,
@@ -44,8 +53,8 @@ async function migrateCars() {
         selectedFavcarsVariant: car.selectedFavcarsVariant,
         model: car.model?.id,
       }
-    });
-  });
+    }));
+  }
   return callApiPromises(carsDataPromises);
 }
 
