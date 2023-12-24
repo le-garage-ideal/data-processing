@@ -7,14 +7,14 @@ async function migrateModels() {
   const brandsResponse = await promiseWithCatch(api.get('brands', {
     params: { 'pagination[limit]': 100000 },
   }));
+  console.log("number of models", models.length);
   const brands = brandsResponse?.data?.data;
   const modelsWithBrandId = models
     .map(model => {
-      const brand = brands.find(brand => brand.attributes.name === model.brand.name);
-      return {
-        ...model,
-        brand,
-      };
+      const brand = brands.find(brand => {
+        return brand.attributes.name === model.brand.name;
+      });
+      return { ...model, brand };
     });
   const modelsWithoutBrand = modelsWithBrandId.filter(model => !model.brand);
   if (modelsWithoutBrand.length > 0) {
