@@ -4,7 +4,7 @@ import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 migrateModels();
 
 async function migrateModels() {
-  const brandsResponse = await promiseWithCatch(api.get('brands', {
+  const brandsResponse = await promiseWithCatch(api.get('api/brands', {
     params: { 'pagination[limit]': 100000 },
   }));
   console.log("number of models", models.length);
@@ -21,7 +21,7 @@ async function migrateModels() {
     throw new Error(`No brand for models ${modelsWithoutBrand.map(m => m.name)}`);
   }
   const modelsDataPromises = modelsWithBrandId.map(model => {
-    return api.post('models', {
+    return api.post('api/models', {
       data: {
         name: model.name,
         brand: model.brand?.id,

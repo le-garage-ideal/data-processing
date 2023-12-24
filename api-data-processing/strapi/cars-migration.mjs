@@ -4,7 +4,7 @@ import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 migrateCars();
 
 async function migrateCars() {
-  const modelsResponse = await promiseWithCatch(api.get('models', {
+  const modelsResponse = await promiseWithCatch(api.get('api/models', {
     params: { 'pagination[limit]': 100000, populate: '*' },
   }));
   const models = modelsResponse?.data?.data;
@@ -40,7 +40,7 @@ async function migrateCars() {
       carsWithoutImages++;
     }
 
-    const existingCar = await promiseWithCatch(api.get('cars/?' +
+    const existingCar = await promiseWithCatch(api.get('api/cars/?' +
       [
         `filters[variant][$eq]=${car.variant}`,
         `filters[model][name][$eq]=${modelName}`,
@@ -50,7 +50,7 @@ async function migrateCars() {
       continue;
     }
     console.log(`Car does not exist ${brandName} ${modelName} ${car.variant}`);
-    carsDataPromises.push(api.post('cars', {
+    carsDataPromises.push(api.post('api/cars', {
       data: {
         variant: car.variant,
         weight: car.weight,

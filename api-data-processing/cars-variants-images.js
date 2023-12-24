@@ -1,18 +1,18 @@
-import { updateBrands, updateModels, updateCars, selectBrands, selectModels, selectCars, Car } from '../common-data-processing/process-collections.js';
+import Axios from 'axios';
+import { updateCars, selectCars } from '../common-data-processing/process-collections.js';
 import connectToMongoDb from '../common-data-processing/mongodb.datasource.js';
 import fs from 'fs';
 import path from 'path';
-import axios from 'axios';
 import sharp from 'sharp';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { exit } from 'process';
+import { downloadImage } from './strapi/utils.mjs';
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const imgDir = '/Users/benth/Documents/dev/perso/le-garage-ideal/le-garage-ideal-website/gatsby-site/static/images';
 const indexPath = path.resolve(imgDir, `index.txt`);
-const getImgPath = id => path.resolve(imgDir, `${id}.jpg`);
+
 const db = connectToMongoDb();
 
 async function carVariantsExtractImages() {
@@ -32,7 +32,7 @@ async function carVariantsExtractImages() {
         
         if (!car.imageFile) {
             try {
-                await downloadImage(car, car.selectedFavcarsUrl);
+                await downloadImage(imgDir, car._id, car.selectedFavcarsUrl, Axios.create());
                 fs.appendFileSync(indexPath, `${car.model.brand.name}\t${car.model.name}\t${car.variant}\t${car.startYear}\t${car._id}.jpg\n`);
                 await updateCars({_id: car._id}, c => c.imageFile = `${car._id}.jpg`);
                 i++;
@@ -52,22 +52,7 @@ async function carVariantsExtractImages() {
 
 }
 
-async function downloadImage(car, url) {  
-    const imgPath = getImgPath(car._id);
-    const writer = fs.createWriteStream(imgPath);
-  
-    return new Promise((resolve, reject) => {
-        axios({
-            url,
-            method: 'GET',
-            responseType: 'stream'
-        }).then(response => {
-            response.data.pipe(writer);
-            writer.on('finish', resolve)
-            writer.on('error', reject)
-        }).catch(error => reject(error));
-    });
-}
+
 
 async function resizeImages() {
     const files = fs.readdirSync(imgDir);

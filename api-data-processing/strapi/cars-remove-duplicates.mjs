@@ -3,7 +3,7 @@ import { api, callApiPromises, promiseWithCatch } from './utils.mjs';
 deleteCarsDuplicates();
 
 async function deleteCarsDuplicates() {
-  const carsResponse = await promiseWithCatch(api.get('cars', {
+  const carsResponse = await promiseWithCatch(api.get('api/cars', {
     params: { 'pagination[limit]': 100000, populate: 'deep' },
   }));
   const cars = carsResponse?.data?.data;
@@ -35,7 +35,7 @@ async function deleteCarsDuplicates() {
     }
   }
 
-  const carsDataPromises = carsDuplicates.map((car) => api.delete(`cars/${car.id}`));
+  const carsDataPromises = carsDuplicates.map((car) => api.delete(`api/cars/${car.id}`));
 
   for (const carsDataPromise of carsDataPromises) {
     await carsDataPromise;
